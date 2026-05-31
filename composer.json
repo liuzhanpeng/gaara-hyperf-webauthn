@@ -1,0 +1,40 @@
+{
+    "name": "lzpeng/gaara-hyperf-webauthn",
+    "description": "gaara-hyperf WebAuthn (FIDO2 passkey) authenticator extension.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GaaraHyperf\\WebAuthn\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "liuzhanpeng",
+            "email": "liuzhanpeng@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "lzpeng/gaara-hyperf": "dev-master",
+        "web-auth/webauthn-lib": "^4.8",
+        "symfony/serializer": "^7.4",
+        "symfony/property-info": "^7.4",
+        "phpdocumentor/reflection-docblock": "^5.0|^6.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.36",
+        "mockery/mockery": "^1.6",
+        "friendsofphp/php-cs-fixer": "^3.94"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "GaaraHyperf\\WebAuthn\\ConfigProvider"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
