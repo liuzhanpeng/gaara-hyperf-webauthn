@@ -1,10 +1,8 @@
 # gaara-hyperf-webauthn
 
-[中文](#中文) | [English](#english)
+[English](README.en.md)
 
 ---
-
-## 中文
 
 基于 [gaara-hyperf](https://github.com/lzpeng/gaara-hyperf) 的 WebAuthn（FIDO2 Passkey）认证器扩展。
 
@@ -257,43 +255,6 @@ App Controllers (自行实现)
 
 ---
 
-## English
-
-WebAuthn (FIDO2 Passkey) authenticator extension for [gaara-hyperf](https://github.com/lzpeng/gaara-hyperf).
-
-### Features
-
-- Complete WebAuthn registration and authentication flow
-- Passkey (discoverable credential) support for username-less login
-- Challenge storage: Session (web) / Redis (API)
-- Follows gaara-hyperf extension patterns
-- Compatible with `web-auth/webauthn-lib ^4.8`
-
-### Installation
-
-```bash
-composer require lzpeng/gaara-hyperf-webauthn
-```
-
-See the Chinese documentation above for detailed usage — the API is identical.
-
-### Architecture
-
-The extension is split into two components:
-
-1. **`WebAuthnAuthenticator`** — plugged into the Guard pipeline. Handles `POST /webauthn/authenticate` (assertion verification → login).
-
-2. **`WebAuthnManager`** — a service injected into your own Controller. Handles options generation (`startRegistration`, `startAuthentication`) and registration completion (`finishRegistration`). These endpoints do not go through the Guard pipeline.
-
-### Requirements
-
-- PHP >= 8.1
-- `lzpeng/gaara-hyperf: dev-master`
-- `web-auth/webauthn-lib: ^4.8`
-- `symfony/serializer: ^6.4|^7.0`
-- `symfony/property-info: ^6.4|^7.0`
-- App must bind `PublicKeyCredentialRepositoryInterface` in the container
-
-### License
+## 许可
 
 MIT
